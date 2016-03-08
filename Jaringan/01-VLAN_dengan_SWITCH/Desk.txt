@@ -1,0 +1,57 @@
+Jaringan komputer VLAN dengan SWITCH
+
+Terdiri dari :
+	1. Switch
+	2. PC A (192.168.1.2/24)
+	3. PC B (192.168.1.3/24)
+
+/* INGAT !! Jaringan masih dalam satu netID jadi hasil akhirnya adalah 
+kedua komputer PC A dan PC B dapat terhubung */
+
+Topologi Jaringan
+
+PC [A] ---> [[ SWITCH ]] <--- [B] PC
+
+Konfigurasi Switch bisa menggunakan console dari 
+komputer/Laptop(*koneksikan dulu antar perangkat) atau juga bisa 
+langsung dari SWITCH.
+
+
+Akan dibuat 2 buah vlan yaitu vlan A dan vlan B dari switch.
+
+PC [A] ---> [vlan A] --> [[ SWITCH ]] <-- [vlan B] <---[B] PC 
+
+Switch>en
+Switch#configure terminal
+Switch(config)#vlan A
+Switch(config-vlan)#name NetworkA
+Switch(config-vlan)#exit
+Switch(config)#vlan B
+Switch(config-vlan)#name NetworkB
+Switch(config-vlan)#exit
+Switch(config)#
+
+Koneksi dari kedua PC ke Swith melalui sebuah port fastEthernet dan 
+setiap port fastEthernet memiliki nomer, rata-rata dari 0-24.
+lihat di topologi yang kamu buat masing-masing PC menggunakan 
+fastEthernet berapa ?
+
+misalnya :
+PC A => fastEthernet 0/1
+PC B => fastEthernet 0/2
+
+Konfigurasi Switch :
+Switch(config)#interface fastEthernet 0/1
+Switch(config-if)#switchport mode access
+Switch(config-if)#switchport access vlan A
+Switch(config-if)#exit
+Switch(config)#interface fastEthernet 0/2
+Switch(config-if)#switchport mode access
+Switch(config-if)#switchport access vlan B
+Switch(config-if)#exit
+
+
+Melihat Konfigurasi
+
+#show vlan
+#show run
