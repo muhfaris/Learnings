@@ -1,0 +1,7 @@
+Jalankan Docker swarm dan mendapatkan pesan error 
+"Error response from daemon: could not choose an IP address to advertise since this system has multiple addresses on different interfaces (10.10.30.191 on enp2s0 and 172.24.0.79 on wlp3s0) – specify one with –advertise-addr "
+
+Solusi :
+docker swarm init  --advertise-addr <ip>
+
+#note <ip> sesuaiin dengan ip yang muncul di pesan error
