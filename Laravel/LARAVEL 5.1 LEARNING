@@ -1,0 +1,113 @@
+LARAVEL 5.1 LEARNING
+
+1- ROUTING ( laravel/app/Http/routes.php )
+	-
+	- (Method yang dapat digunakan untuk restful)
+	-
+	--> Route::get();
+	--> Route::post();
+	-->	Route::put();
+	--> Route::delete();
+	--> Route::any();
+
+	---> Example
+		--> Route::get('/', function(){
+				return 'hello world';
+			});
+
+			Route::get('helloworld', function(){
+				return 'hello world from laravel framework';
+			});
+		--> 
+		--> Open via Browser /public and /public/helloworld
+
+	-
+	- Router BerParameter
+	- via Browser /public/motor/supra
+	--> supra sebagai parameter yang di panggil akan di terima oleh route
+	-
+	--> Route::get('motor/{jenis}', function($jenis){
+			return 'dasboard motor :'.$jenis;
+		});
+
+2- MVC (MODEL VIEW CONTROLLER)
+	-
+	-
+	- diagram dalam laravel
+	-
+	--->	BROWSER ---> Routing
+				^			|
+				|			V
+				|		Controller
+				|			|
+			View	< ------------ > Model <----> Databases
+
+3- Membuat Controller menggunakan composer
+	-
+	- php artisan --version
+	--> Laravel Framework version 5.2.20
+	-
+	- Masuk direktori laravel
+	- php artisan (jika tidak tahu perintahnya, akan muncul opsi pilihan)
+	-
+	- Modifikasi controller untuk menampilkan sebuah pesan
+	-
+	--> class BookController extends Controller{
+    		public function index(){
+    			return 'controller index adalah index page book';
+   			 }
+		}
+	-
+	-
+	--> Membuat Route untuk memanggil Controller
+	-
+	--> //Route::get('nama_variabel','nama_controller@Method_dari_controller');
+	-
+	--> Route::get('book','BookController@index');
+	-
+	-
+	---> Menambahkan sebuah parameter dalam coontroller
+	-
+	---> Membuat Route berparameter :
+	--> Route::get('book/{judul}','BookController@viewJudul');
+	-:> variabel parameter adalah judul
+	-:> memanggil controller dengan nama Bookcontroller
+	-:> memanggil method viewJudul
+	-
+	-
+	---> controller dengan method viewJudul
+	--> public function viewJudul($judul){
+    		return 'Buku yang tersedia :'.$judul;
+    	}
+    -
+    -
+	- Analogi
+	-
+	--> Browser __ /public/book/standbyme
+	--> diterima Route __ standbyme disimpan dalam variabel judul
+	--> mengarahkan ke controller __ parameter $judul
+	--> controller menampilkan teks 
+	-:> Buku yang tersedia :'.$judul
+
+
+4- Menghubungkan view dengan controller
+	-
+	- View (laravel/resources)
+	-
+	--> Book.php
+	--> <h1>Page View</h1>
+ 		Buku yang Anda Pesan : <h1><?php echo $judul?></h1>
+ 	-
+ 	--> Controller
+ 	--> class BookController extends Controller{
+    --> public function viewJudul($judul){
+    	$data=array(
+    			'judul' => $judul
+    	);
+			return view('Book', $data);
+    		}
+		}
+	-
+	--> via /public/book/dagelan
+	
+
