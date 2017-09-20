@@ -1,0 +1,10 @@
+# docker ps
+- Cek kontanier yang jalan 
+
+# docker rm <image id>
+# docker rmi <image id>
+- Hapus image docker
+
+# docker system prune
+# docker image prune
+- Hapus semua image + file di sistem (/var/lib/docker)
