@@ -1,0 +1,6 @@
+# Ebook
+
+- https://github.com/sger/RustBooks
+- https://rustbyexample.com/
+- https://www.ralfj.de/projects/rust-101/main.html
+- https://killercup.github.io/trpl-ebook/
