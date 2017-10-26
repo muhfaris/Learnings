@@ -4,6 +4,7 @@ Pada Go Workspace memiliki 3 folder
 - bin _ file binary hasil dari build _
 - pkg _ paket yang dibutuhhkan dari aplikasi _
 
+
 ## PATH dari GO
 
 ``` 
