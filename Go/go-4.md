@@ -1,3 +1,4 @@
+# Membuat Library
 ## Membuat direktory library
 - > mkdir $GOPATH/src/github.com/user/stringutil
 
