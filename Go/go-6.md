@@ -1,4 +1,4 @@
-## Import Go 
+## Import GO 
 _ ada 2 cara untuk import go yaitu multiple import statement dan factored import
 statement_
 
