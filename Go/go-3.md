@@ -1,3 +1,4 @@
+# Run GO
 ## Membuat paket
 - mkdir $GOPATH/src/github.com/user/hello
 
