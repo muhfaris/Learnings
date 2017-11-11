@@ -12,3 +12,6 @@
 ## Install aplikasi
 - > cd $GOPATH/src/github.com/user/hello
 - > go install
+
+## Run Applikasi
+- > $GOPATH/bin/hello 
