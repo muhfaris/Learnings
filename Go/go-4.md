@@ -7,7 +7,7 @@
 - > touch reverse.go
 
 ## Isi file nya
-```  
+`  
 // Package stringutil contains utility functions for working with strings.
 package stringutil
 
@@ -19,24 +19,24 @@ func Reverse(s string) string {
 	}
 	return string(r)
 }
-```
+`
 
 ## Build library
 - > go build github.com/user/stringutil
 
 
 ## Menggunakan library
-``` package main
+` package main
 
 import (
 	"fmt"
 
-	"github.com/user/stringutil"
+	"github.com/user/stringutil" //this same with path file from #build
 )
 
 func main() {
 	fmt.Printf(stringutil.Reverse("!oG ,olleH"))
-} ```
+} `
 
 ## Install aplikasi 
 - > go install github.com/user/hello
@@ -44,7 +44,7 @@ func main() {
 ## Hasil
 _ Hasil install akan membuat suatu file di pkg -> username -> repo -> file.a _
 
-``` bin/
+` bin/
     hello                 # command executable
 pkg/
     darwin_amd64/       # this will reflect your OS and architecture
@@ -55,4 +55,5 @@ src/
         hello/
             hello.go      # command source
         stringutil/
-            reverse.go    # package source``
+            reverse.go    # package source
+`
