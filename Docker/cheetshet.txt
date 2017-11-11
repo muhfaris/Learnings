@@ -8,3 +8,49 @@
 # docker system prune
 # docker image prune
 - Hapus semua image + file di sistem (/var/lib/docker)
+
+# [Info]
+# Start Mysql
+# docker run --name some-mysql -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mysql:tag
+- Start terlebi dahulu mysql sebelum link dengan website (eg.wordpress)
+
+# docker run --name wpsite --link <name mysql>:mysql -p 8080:80 -d wordpress
+# docker run --name wpsite --link wpsql:mysql -p 8080:80 -d wordpress
+- Link antara kontainer dengan kontainer
+
+### DOCKER SWaRM
+### Implementation from katacoda/docker-production
+## HOST 1 sebagai manager (manage cluster, node)
+## HOST 2 sebagai worker
+
+## HOST 1 = 172.17.0.22.:2377
+
+## di HOST 1
+# docker swarm init
+- inisialisasi docker swarm
+
+## di HOST 1
+# token=$(docker -H 172.17.0.22:2345 swarm join-token -q worker) && echo $token
+- menampilkan token dan mendapatkan token untuk digunakan ke "worker"
+
+## HOST 2 
+# docker swarm join 172.17.0.22:2377 --token $token
+- $token di ganti dengan token yang muncul dari tahap sebelumnya, disini HOST 2 join ke HOST 1
+
+## HOST 1
+# docker node ls
+- melihat node worker (HOST 2) sudah bergabung dengan HOST 1
+
+ID                           HOSTNAME  STATUS  AVAILABILITY  MANAGER STATUS
+ma0r3u283kj6168sypx0romqy *  host01    Ready   Active        Leader
+vf098jit9t3wq215g54llqc18    host02    Ready   Active
+
+
+#docker network create -d overlay skynet
+- membuat overlay network, guna menghubungkan kontainer yang berbeda host dapat berkomunikasi
+
+#docker service create --name http --network skynet --replicas 2 -p 80:80 katacoda/docker-http-server
+- membuat service dari (katacoda/doker-http-server), dengan nama http dan network name is skynet
+
+### END DOCKER SwARM
+
