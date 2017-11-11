@@ -9,18 +9,20 @@ import (
   Package needed is
   log		-> reference : https://golang.org/pkg/log/
   net/http	-> reference : https://golang.org/pkg/net/http/
-
 */
+
 func main() {
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		/*
-			root page like (index.php/index.html) is set with /
-			fungsi ResponseWriter di aliaskan dengan variabel w
-			fungsi Request di aliaskan dengan vairabel r
+		   			root page like (index.php/index.html) is set with /
+		   			fungsi ResponseWriter di aliaskan dengan variabel w
+		   			fungsi Request di aliaskan dengan vairabel r
 
-			The function signature of func(w http.ResponseWriter, r *http.Request) is a common way of handling HTTP requests throughout the Go standard library
+		   The function signature of func(w http.ResponseWriter, r *http.Request) is a common way of handling HTTP requests throughout the Go standard library
+
 		*/
 		//fungsi w (ResponseWriter) membuat konten html
+
 		w.Write([]byte(`
 		<html>
                <head>
