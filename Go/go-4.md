@@ -12,7 +12,7 @@
 package stringutil
 - Reverse returns its argument string reversed rune-wise left to right.
 
-`
+```
 func Reverse(s string) string {
 	r := []rune(s)
 	for i, j := 0, len(r)-1; i < len(r)/2; i, j = i+1, j-1 {
@@ -20,14 +20,14 @@ func Reverse(s string) string {
 	}
 	return string(r)
 }
-`
+```
 
 ## Build library
 - > go build github.com/user/stringutil
 
 
 ## Menggunakan library
-` package main
+``` package main
 
 import (
 	"fmt"
@@ -37,7 +37,7 @@ import (
 
 func main() {
 	fmt.Printf(stringutil.Reverse("!oG ,olleH"))
-} `
+} ```
 
 ## Install aplikasi 
 - > go install github.com/user/hello
@@ -45,7 +45,7 @@ func main() {
 ## Hasil
 _ Hasil install akan membuat suatu file di pkg -> username -> repo -> file.a _
 
-` bin/
+``` bin/
     hello                 # command executable
 pkg/
     darwin_amd64/       # this will reflect your OS and architecture
@@ -57,4 +57,4 @@ src/
             hello.go      # command source
         stringutil/
             reverse.go    # package source
-`
+```
