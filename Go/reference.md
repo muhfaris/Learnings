@@ -1,4 +1,12 @@
-## Reference
+## Reference to learn Golang
 - https://medium.com/100-days-of-golang
 - https://medium.com/@opam22
+- http://www.golangbootcamp.com/book/exercises
+- https://dave.cheney.net/resources-for-new-go-programmers
+- https://gobyexample.com/
+- https://go-tour-id2.appspot.com/list
+- https://golangbot.com/learn-golang-series/
+- https://github.com/ardanlabs/gotraining
+- https://www.tutorialspoint.com/go/go_basic_syntax.htm
+- https://dasarpemrogramangolang.novalagung.com/
 
