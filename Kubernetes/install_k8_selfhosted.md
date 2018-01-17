@@ -13,6 +13,7 @@
 ### Step 3
 - $curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
 - Add repo 
+
 `` $cat < /etc/apt/sources.list.d/kubernetes.list
 deb http://apt.kubernetes.io/ kubernetes-xenial main
 EOF ``
@@ -31,8 +32,8 @@ $sudo chown $(id -u):$(id -g) $HOME/.kube/config
 ```
 
 ### Step 6
-$kubectl create -f https://raw.githubusercontent.com/winse/docker-hadoop/master/kube-deploy/kubeadm/kube-flannel-rbac.yml --namespace=kube-system
-$kubectl create -f https://raw.githubusercontent.com/winse/docker-hadoop/master/kube-deploy/kubeadm/kube-flannel.yml --namespace=kube-system
+- ``$kubectl create -f https://raw.githubusercontent.com/winse/docker-hadoop/master/kube-deploy/kubeadm/kube-flannel-rbac.yml --namespace=kube-system``
+- ``$kubectl create -f https://raw.githubusercontent.com/winse/docker-hadoop/master/kube-deploy/kubeadm/kube-flannel.yml --namespace=kube-system``
 
 ### Step 7 (option)
 - `root@node-1:~$ kubeadm join --token ee4fea.3c299a9db86b1f1c $MASTER_IP:6443`
