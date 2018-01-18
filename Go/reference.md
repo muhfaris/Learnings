@@ -9,4 +9,4 @@
 - https://github.com/ardanlabs/gotraining
 - https://www.tutorialspoint.com/go/go_basic_syntax.htm
 - https://dasarpemrogramangolang.novalagung.com/
-
+- https://talks.golang.org/
